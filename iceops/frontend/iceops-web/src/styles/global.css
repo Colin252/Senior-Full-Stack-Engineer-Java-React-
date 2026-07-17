@@ -1,0 +1,568 @@
+:root {
+  font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+
+  color: #e6edf3;
+  background-color: #0d1117;
+
+  --bg-main: #0d1117;
+  --bg-sidebar: #161b22;
+  --bg-card: #21262d;
+  --bg-card-hover: #292f36;
+  --bg-input: #0d1117;
+
+  --border: #30363d;
+  --border-light: #3d444d;
+
+  --text-primary: #e6edf3;
+  --text-secondary: #9198a1;
+  --text-muted: #6e7681;
+
+  --primary: #2f81f7;
+
+  --success: #3fb950;
+  --warning: #d29922;
+  --danger: #8b2c2c;
+
+  --sidebar-width: 245px;
+  --radius: 8px;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+
+body {
+  min-width: 320px;
+
+  background: var(--bg-main);
+
+  color: var(--text-primary);
+}
+
+
+a {
+  color: inherit;
+
+  text-decoration: none;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-top: 0;
+}
+
+
+h1 {
+  font-size: 28px;
+
+  margin-bottom: 8px;
+}
+
+
+h2 {
+  margin-top: 28px;
+
+  margin-bottom: 14px;
+}
+
+
+p {
+  color: var(--text-secondary);
+}
+
+
+
+/* =========================
+   APP LAYOUT
+========================= */
+
+
+.app-layout {
+  display: flex;
+
+  min-height: 100vh;
+
+  background: var(--bg-main);
+}
+
+
+.app-wrapper {
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  margin-left: var(--sidebar-width);
+}
+
+
+.main-content {
+  flex: 1;
+
+  padding: 25px;
+
+  background: var(--bg-main);
+}
+
+
+.page-container,
+.erp-page {
+  width: 100%;
+
+  max-width: 1500px;
+
+  margin: auto;
+}
+
+
+
+/* =========================
+   BUTTONS DARK
+========================= */
+
+
+button {
+  min-height: 38px;
+
+  border: 1px solid #3d444d;
+
+  border-radius: 6px;
+
+  padding: 8px 14px;
+
+  background: #21262d;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  transition:
+          background 0.15s ease,
+          border-color 0.15s ease;
+}
+
+
+button:hover {
+  background: #8b2c2c;
+
+  border-color: #b33a3a;
+}
+
+
+button:active {
+  background: #5a1f1f;
+}
+
+
+button + button {
+  margin-left: 8px;
+}
+
+
+.secondary-button {
+  background: #21262d;
+
+  border-color: #3d444d;
+}
+
+
+.secondary-button:hover {
+  background: #8b2c2c;
+}
+
+
+.danger-button,
+button.delete-button {
+  background: #8b2c2c;
+
+  border-color: #b33a3a;
+}
+
+
+.danger-button:hover,
+button.delete-button:hover {
+  background: #b33a3a;
+}
+
+
+
+/* =========================
+   INPUTS
+========================= */
+
+
+input,
+select,
+textarea {
+  width: 100%;
+
+  min-height: 40px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 6px;
+
+  padding: 9px 11px;
+
+  background: var(--bg-input);
+
+  color: white;
+}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+
+  border-color: #8b2c2c;
+}
+
+
+
+/* =========================
+   FORMS
+========================= */
+
+
+form {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(190px, 1fr));
+
+  gap: 14px;
+
+  padding: 18px;
+
+  margin: 20px 0 24px;
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius);
+
+  background: var(--bg-card);
+}
+
+
+
+/* =========================
+   TABLES
+========================= */
+
+
+table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  overflow: hidden;
+
+  border-radius: var(--radius);
+
+  background: var(--bg-card);
+}
+
+
+thead {
+  background: var(--bg-sidebar);
+}
+
+
+th {
+  color: white;
+
+  text-align: left;
+
+  font-size: 13px;
+
+  padding: 12px;
+}
+
+
+td {
+  padding: 12px;
+
+  color: #c9d1d9;
+
+  border-top: 1px solid var(--border);
+}
+
+
+tbody tr:hover {
+  background: var(--bg-card-hover);
+}
+
+
+
+/* =========================
+   CARDS
+========================= */
+
+
+.erp-grid,
+.dashboard-grid,
+.cards-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(190px, 1fr));
+
+  gap: 16px;
+
+  margin: 20px 0 24px;
+}
+
+
+.erp-card,
+.dashboard-card,
+.stat-card,
+.card {
+  padding: 18px;
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius);
+
+  background: var(--bg-card);
+}
+
+
+.erp-card:hover {
+  background: var(--bg-card-hover);
+}
+
+
+.erp-card h3 {
+  color: var(--text-secondary);
+
+  font-size: 13px;
+}
+
+
+.erp-card strong {
+  display: block;
+
+  margin-top: 8px;
+
+  font-size: 26px;
+
+  color: white;
+}
+
+
+
+/* =========================
+   ICEOPS DASHBOARD
+========================= */
+
+
+.iceops-dashboard {
+  width: 100%;
+
+  min-height: 100%;
+
+  background: var(--bg-main);
+
+  color: var(--text-primary);
+}
+
+
+.iceops-dashboard-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  width: 100%;
+
+  padding: 22px;
+
+  margin-bottom: 22px;
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius);
+
+  background: var(--bg-sidebar);
+}
+
+
+.iceops-dashboard-header h1 {
+  margin: 0 0 8px;
+
+  color: #ffffff;
+
+  font-size: 28px;
+}
+
+
+.iceops-dashboard-header p {
+  margin: 0;
+
+  color: var(--text-secondary);
+}
+
+
+.iceops-ecosystem-buttons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  flex-wrap: wrap;
+
+  flex-shrink: 0;
+}
+
+
+.iceops-external-button {
+  min-height: 42px;
+
+  padding: 10px 18px;
+
+  margin: 0;
+
+  border: 1px solid #b33a3a;
+
+  border-radius: 6px;
+
+  background: #21262d;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+          background 0.15s ease,
+          border-color 0.15s ease;
+}
+
+
+.iceops-external-button:hover {
+  background: #8b2c2c;
+
+  border-color: #b33a3a;
+}
+
+
+.iceops-external-button:active {
+  background: #5a1f1f;
+}
+
+
+.iceops-external-button + .iceops-external-button {
+  margin-left: 0;
+}
+
+
+
+/* =========================
+   STATES
+========================= */
+
+
+.empty-state {
+  padding: 30px;
+
+  text-align: center;
+
+  border: 1px dashed var(--border-light);
+
+  border-radius: var(--radius);
+
+  background: var(--bg-card);
+
+  color: var(--text-secondary);
+}
+
+
+.success-message {
+  color: var(--success);
+}
+
+
+.error-message {
+  color: #f85149;
+}
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+
+@media(max-width:900px) {
+
+  .app-wrapper {
+    margin-left: 0;
+  }
+
+
+  .main-content {
+    padding: 18px;
+  }
+
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+
+  table {
+    display: block;
+
+    overflow-x: auto;
+  }
+
+
+  .iceops-dashboard-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .iceops-ecosystem-buttons {
+    width: 100%;
+  }
+
+
+  .iceops-external-button {
+    width: 100%;
+  }
+
+}

@@ -1,0 +1,142 @@
+services:
+
+  mysql:
+    image: mysql:8
+    container_name: iceops-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+     - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  iceops-discovery-server:
+    image: iceops-discovery-server:latest
+    pull_policy: never
+    container_name: iceops-discovery-server
+    ports:
+      - "8761:8761"
+
+  iceops-analytics-service:
+    build:
+      context: ./iceops-analytics-service
+    image: iceops-analytics-service:latest
+    container_name: iceops-analytics-service
+    ports:
+      - "8088:8088"
+    depends_on:
+      - mysql
+      - iceops-discovery-server
+
+  iceops-audit-service:
+    build:
+      context: ./iceops-audit-service
+    image: iceops-audit-service:latest
+    container_name: iceops-audit-service
+    ports:
+      - "8089:8089"
+    depends_on:
+      - mysql
+      - iceops-discovery-server
+
+  iceops-notification-service:
+    build:
+      context: ./iceops-notification-service
+    image: iceops-notification-service:latest
+    container_name: iceops-notification-service
+    ports:
+      - "8090:8090"
+    depends_on:
+      - mysql
+      - iceops-discovery-server
+  iceops-api-gateway:
+    build:
+      context: ./iceops-api-gateway
+    container_name: iceops-api-gateway
+    ports:
+      - "8080:8080"
+    depends_on:
+      - iceops-discovery-server
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://iceops-discovery-server:8761/eureka
+    networks:
+      - default
+
+  iceops-auth-service:
+    build:
+      context: ./iceops-auth-service
+    container_name: iceops-auth-service
+    ports:
+      - "8081:8081"
+    depends_on:
+      - iceops-discovery-server
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://iceops-discovery-server:8761/eureka/
+
+  iceops-order-service:
+    build:
+      context: ./iceops-order-service
+    image: iceops-order-service:latest
+    container_name: iceops-order-service
+    ports:
+      - "8085:8085"
+    depends_on:
+      - mysql
+      - iceops-discovery-server
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://iceops-discovery-server:8761/eureka/
+
+  iceops-organization-service:
+    build:
+      context: ./iceops-organization-service
+    image: iceops-organization-service:latest
+    container_name: iceops-organization-service
+    ports:
+      - "8087:8087"
+    depends_on:
+      - mysql
+      - iceops-discovery-server
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://iceops-discovery-server:8761/eureka/
+
+  iceops-payment-service:
+    build:
+      context: ./iceops-payment-service
+    image: iceops-payment-service:latest
+    container_name: iceops-payment-service
+    ports:
+      - "8086:8086"
+    depends_on:
+      - mysql
+      - iceops-discovery-server
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://iceops-discovery-server:8761/eureka/
+
+  iceops-product-service:
+    build:
+      context: ./iceops-product-service
+    image: iceops-product-service:latest
+    container_name: iceops-product-service
+    ports:
+      - "8084:8084"
+    depends_on:
+      - mysql
+      - iceops-discovery-server
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://iceops-discovery-server:8761/eureka/
+
+  iceops-user-service:
+    build:
+      context: ./iceops-user-service
+    image: iceops-user-service:latest
+    container_name: iceops-user-service
+    ports:
+      - "8082:8082"
+    depends_on:
+      - mysql
+      - iceops-discovery-server
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://iceops-discovery-server:8761/eureka/
+
+volumes:
+  mysql-data:
