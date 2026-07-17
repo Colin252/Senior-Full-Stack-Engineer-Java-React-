@@ -1,0 +1,187 @@
+.finanzas-container {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.finanzas-title {
+    margin-bottom: 8px;
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.finanzas-subtitle {
+    margin-bottom: 24px;
+    color: #9198a1;
+    font-size: 15px;
+}
+
+.finanzas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px;
+
+    width: 100%;
+    margin-top: 20px;
+}
+
+.fin-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 76px;
+    padding: 16px;
+
+    border: 1px solid #30363d;
+    border-radius: 8px;
+
+    background: #21262d;
+    color: #e6edf3;
+
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+
+    transition:
+            background-color 0.15s ease,
+            border-color 0.15s ease,
+            color 0.15s ease;
+}
+
+.fin-btn:hover {
+    border-color: #b91c1c;
+    background: #7f1d1d;
+    color: #ffffff;
+}
+
+/* Tablas contables */
+
+.tabla {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+
+    border: 1px solid #30363d;
+    border-spacing: 0;
+    border-collapse: separate;
+    overflow: hidden;
+
+    border-radius: 8px;
+    background: #21262d;
+}
+
+.tabla thead {
+    background: #161b22;
+}
+
+.tabla th {
+    padding: 12px 14px;
+    border-bottom: 1px solid #30363d;
+
+    color: #ffffff;
+    font-size: 13px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.tabla td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #30363d;
+
+    color: #c9d1d9;
+}
+
+.tabla tbody tr:hover {
+    background: #292f36;
+}
+
+.tabla tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+/* Estado de resultados */
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.cards-container .card {
+    width: 100%;
+    min-height: 135px;
+    padding: 20px;
+
+    border: 1px solid #30363d;
+    border-radius: 8px;
+
+    background: #21262d;
+    color: #e6edf3;
+
+    text-align: left;
+    box-shadow: none;
+}
+
+.cards-container .card:hover {
+    border-color: #7f1d1d;
+    background: #292f36;
+}
+
+.cards-container .card h2 {
+    margin: 0 0 10px;
+    color: #9198a1;
+    font-size: 14px;
+}
+
+.cards-container .card p {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.positivo {
+    color: #3fb950;
+}
+
+.negativo {
+    color: #f85149;
+}
+
+/* Listas contables */
+
+.finanzas-container ul {
+    padding: 0;
+    list-style: none;
+}
+
+.finanzas-container li {
+    margin-bottom: 8px;
+    padding: 12px 14px;
+
+    border: 1px solid #30363d;
+    border-radius: 8px;
+
+    background: #21262d;
+    color: #c9d1d9;
+}
+
+.finanzas-container li:hover {
+    background: #292f36;
+}
+
+@media (max-width: 900px) {
+    .tabla {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .finanzas-grid,
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+}

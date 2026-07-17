@@ -1,0 +1,45 @@
+.movements-container {
+    width: 100%;
+    max-width: 850px;
+}
+
+.movements-container input,
+.movements-container select {
+    width: 100%;
+    min-height: 42px;
+
+    padding: 10px 12px;
+
+    border: 1px solid #30363d;
+    border-radius: 6px;
+
+    background: #0d1117;
+    color: #e6edf3;
+}
+
+.movements-container input:focus,
+.movements-container select:focus {
+    border-color: #b91c1c;
+    outline: none;
+}
+
+.movements-list {
+    padding: 0;
+    list-style: none;
+}
+
+.movements-list li {
+    margin-bottom: 10px;
+    padding: 15px;
+
+    border: 1px solid #30363d;
+    border-left: 4px solid #b91c1c;
+    border-radius: 8px;
+
+    background: #21262d;
+    color: #c9d1d9;
+}
+
+.movements-list li:hover {
+    background: #292f36;
+}

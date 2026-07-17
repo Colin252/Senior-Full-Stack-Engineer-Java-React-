@@ -1,0 +1,103 @@
+.page{
+    width:100%;
+}
+
+.fin-table-container{
+    width:100%;
+}
+
+.fin-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    overflow:hidden;
+
+    border-radius:8px;
+
+    background:#21262d;
+
+    border:1px solid #30363d;
+
+    margin-top:20px;
+
+}
+
+.fin-table thead{
+
+    background:#161b22;
+
+}
+
+.fin-table th{
+
+    padding:12px 14px;
+
+    color:white;
+
+    text-align:left;
+
+    font-size:13px;
+
+    text-transform:uppercase;
+
+    border-bottom:1px solid #30363d;
+
+}
+
+.fin-table td{
+
+    padding:12px 14px;
+
+    color:#c9d1d9;
+
+    border-bottom:1px solid #30363d;
+
+}
+
+.fin-table tbody tr{
+
+    transition:.15s;
+
+}
+
+.fin-table tbody tr:hover{
+
+    background:#292f36;
+
+}
+
+.fin-ingreso{
+
+    color:#3fb950;
+
+    font-weight:700;
+
+}
+
+.fin-gasto{
+
+    color:#f85149;
+
+    font-weight:700;
+
+}
+
+.empty-state{
+
+    margin-top:20px;
+
+}
+
+@media(max-width:900px){
+
+.fin-table{
+
+    display:block;
+
+    overflow-x:auto;
+
+}
+
+}

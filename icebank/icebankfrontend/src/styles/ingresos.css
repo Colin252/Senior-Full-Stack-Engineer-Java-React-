@@ -1,0 +1,43 @@
+.ingresos-container {
+    width: 100%;
+}
+
+.tabla-ingresos {
+    width: 100%;
+    margin-top: 20px;
+
+    border: 1px solid #30363d;
+    border-spacing: 0;
+    border-collapse: separate;
+    overflow: hidden;
+
+    border-radius: 8px;
+    background: #21262d;
+}
+
+.tabla-ingresos th {
+    padding: 12px 14px;
+    border-bottom: 1px solid #30363d;
+
+    background: #161b22;
+    color: #ffffff;
+
+    text-align: left;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.tabla-ingresos td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #30363d;
+
+    color: #c9d1d9;
+}
+
+.tabla-ingresos tr:hover {
+    background: #292f36;
+}
+
+.tabla-ingresos tr:last-child td {
+    border-bottom: 0;
+}

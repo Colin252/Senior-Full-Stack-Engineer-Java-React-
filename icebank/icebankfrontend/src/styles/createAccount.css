@@ -1,0 +1,59 @@
+.create-account {
+    width: 100%;
+    max-width: 520px;
+}
+
+.create-account form {
+    display: grid;
+    gap: 14px;
+
+    padding: 18px;
+
+    border: 1px solid #30363d;
+    border-radius: 8px;
+
+    background: #21262d;
+}
+
+.create-account input {
+    width: 100%;
+    min-height: 42px;
+
+    padding: 10px 12px;
+
+    border: 1px solid #30363d;
+    border-radius: 6px;
+
+    background: #0d1117;
+    color: #e6edf3;
+}
+
+.create-account input:focus {
+    border-color: #b91c1c;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(185, 28, 28, 0.18);
+}
+
+.create-account button {
+    width: 100%;
+    min-height: 40px;
+
+    border: 1px solid #3d444d;
+    border-radius: 6px;
+
+    background: #21262d;
+    color: #ffffff;
+
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.create-account button:hover {
+    border-color: #b91c1c;
+    background: #b91c1c;
+}
+
+.success-msg {
+    margin-top: 15px;
+    color: #3fb950;
+}

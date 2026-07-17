@@ -1,0 +1,129 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: 240px;
+    height: 100vh;
+
+    padding: 18px 14px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    background: #161b22;
+    color: #ffffff;
+
+    border-right: 1px solid #30363d;
+}
+
+.sidebar h2 {
+    margin: 0 0 22px;
+    padding: 0 8px 18px;
+
+    border-bottom: 1px solid #30363d;
+
+    color: #ffffff;
+    font-size: 22px;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.nav-section-title {
+    margin: 18px 10px 6px;
+
+    color: #6e7681;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.sidebar a {
+    display: block;
+
+    padding: 10px 12px;
+
+    border: 1px solid transparent;
+    border-radius: 6px;
+
+    background: transparent;
+    color: #a8b0ba;
+
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+
+    transition:
+            background-color 0.15s ease,
+            border-color 0.15s ease,
+            color 0.15s ease;
+}
+
+.sidebar a:hover {
+    border-color: #7f1d1d;
+    background: #7f1d1d;
+    color: #ffffff;
+}
+
+.logout-btn {
+    width: 100%;
+
+    margin-top: 24px;
+    margin-bottom: 12px;
+
+    padding: 10px 12px;
+
+    border: 1px solid #3d444d;
+    border-radius: 6px;
+
+    background: #21262d;
+    color: #ffffff;
+
+    cursor: pointer;
+    font-weight: 600;
+
+    transition:
+            background-color 0.15s ease,
+            border-color 0.15s ease;
+}
+
+.logout-btn:hover {
+    border-color: #b91c1c;
+    background: #b91c1c;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: #161b22;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #3d444d;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #b91c1c;
+}
+
+@media (max-width: 900px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        max-height: 420px;
+
+        border-right: 0;
+        border-bottom: 1px solid #30363d;
+    }
+}
