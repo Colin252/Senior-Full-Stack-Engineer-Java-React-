@@ -1,0 +1,10 @@
+:root {
+  --primary: #00eaff;
+  --secondary: #ff0099;
+  --text-light: #ddd;
+  --text-dark: #000;
+  --bg-panel: rgba(10, 10, 25, 0.7);
+  --border-glow: rgba(0, 255, 255, 0.2);
+
+  --gradient-title: linear-gradient(90deg, #00eaff, #ff0099);
+}

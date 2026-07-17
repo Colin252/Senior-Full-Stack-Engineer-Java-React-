@@ -1,0 +1,15 @@
+/* RESET GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Para evitar saltos al abrir sidebar */
+html {
+  scroll-behavior: smooth;
+}
