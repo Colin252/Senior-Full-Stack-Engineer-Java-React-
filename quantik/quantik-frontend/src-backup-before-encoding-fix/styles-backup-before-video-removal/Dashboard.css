@@ -1,0 +1,372 @@
+:root {
+    --quantik-bg-main: #0d1117;
+    --quantik-bg-sidebar: #161b22;
+    --quantik-bg-card: #21262d;
+    --quantik-bg-card-hover: #292f36;
+
+    --quantik-border: #30363d;
+    --quantik-border-light: #3d444d;
+
+    --quantik-text-primary: #e6edf3;
+    --quantik-text-secondary: #9198a1;
+    --quantik-text-muted: #6e7681;
+
+    --quantik-danger: #b91c1c;
+    --quantik-danger-hover: #7f1d1d;
+    --quantik-success: #3fb950;
+
+    --quantik-sidebar-width: 245px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.dashboard-page {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+
+    background: var(--quantik-bg-main);
+    color: var(--quantik-text-primary);
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.dashboard-sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 100;
+
+    width: var(--quantik-sidebar-width);
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 18px 14px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    background: var(--quantik-bg-sidebar);
+    border-right: 1px solid var(--quantik-border);
+}
+
+.dashboard-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    flex-shrink: 0;
+
+    padding: 4px 8px 20px;
+    margin-bottom: 10px;
+
+    border-bottom: 1px solid var(--quantik-border);
+}
+
+.dashboard-logo {
+    display: grid;
+    place-items: center;
+
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid var(--quantik-border-light);
+    border-radius: 8px;
+
+    background: var(--quantik-bg-card);
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.dashboard-brand strong {
+    display: block;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.dashboard-brand small {
+    display: block;
+    margin-top: 2px;
+    color: var(--quantik-text-secondary);
+    font-size: 12px;
+}
+
+.dashboard-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    padding-bottom: 14px;
+}
+
+.dashboard-section-title {
+    margin: 18px 10px 6px;
+
+    color: var(--quantik-text-muted);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.dashboard-nav-button {
+    width: 100%;
+    min-height: 40px;
+
+    padding: 10px 12px;
+
+    border: 1px solid transparent;
+    border-radius: 6px;
+
+    background: transparent;
+    color: #a8b0ba;
+
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+            background-color 0.15s ease,
+            border-color 0.15s ease,
+            color 0.15s ease;
+}
+
+.dashboard-nav-button:hover {
+    border-color: var(--quantik-danger);
+    background: var(--quantik-danger-hover);
+    color: #ffffff;
+}
+
+.dashboard-nav-button:active {
+    background: #5f1515;
+}
+
+.dashboard-demo-label {
+    margin-top: auto;
+    padding: 16px 10px 8px;
+
+    border-top: 1px solid var(--quantik-border);
+
+    color: var(--quantik-text-muted);
+    font-size: 11px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.dashboard-content {
+    flex: 1;
+    min-width: 0;
+    min-height: 100vh;
+
+    margin-left: var(--quantik-sidebar-width);
+    padding: 26px;
+
+    background: var(--quantik-bg-main);
+    color: var(--quantik-text-primary);
+}
+
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 18px 20px;
+    margin-bottom: 24px;
+
+    border: 1px solid var(--quantik-border);
+    border-radius: 8px;
+
+    background: var(--quantik-bg-sidebar);
+}
+
+.dashboard-header h1 {
+    margin: 0 0 6px;
+
+    color: #ffffff;
+
+    font-size: 28px;
+    font-weight: 700;
+
+    text-shadow: none;
+}
+
+.dashboard-header p {
+    margin: 0;
+    color: var(--quantik-text-secondary);
+    line-height: 1.5;
+}
+
+.dashboard-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    flex-shrink: 0;
+
+    color: #c9d1d9;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.dashboard-status-dot {
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: var(--quantik-success);
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns:
+    repeat(auto-fit, minmax(230px, 1fr));
+
+    gap: 16px;
+}
+
+.dashboard-card {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 185px;
+    padding: 20px;
+
+    border: 1px solid var(--quantik-border);
+    border-radius: 8px;
+
+    background: var(--quantik-bg-card);
+    color: var(--quantik-text-primary);
+
+    transition:
+            background-color 0.15s ease,
+            border-color 0.15s ease;
+}
+
+.dashboard-card:hover {
+    border-color: var(--quantik-danger);
+    background: var(--quantik-bg-card-hover);
+}
+
+.dashboard-card h2 {
+    margin: 0 0 10px;
+
+    color: #ffffff;
+
+    font-size: 17px;
+    font-weight: 650;
+}
+
+.dashboard-card p {
+    flex: 1;
+
+    margin: 0 0 18px;
+
+    color: var(--quantik-text-secondary);
+    line-height: 1.5;
+}
+
+.dashboard-card button {
+    width: 100%;
+    min-height: 40px;
+
+    border: 1px solid var(--quantik-border-light);
+    border-radius: 6px;
+
+    background: var(--quantik-bg-card);
+    color: #ffffff;
+
+    font: inherit;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+            background-color 0.15s ease,
+            border-color 0.15s ease;
+}
+
+.dashboard-card button:hover {
+    border-color: var(--quantik-danger);
+    background: var(--quantik-danger);
+}
+
+.dashboard-card button:active {
+    background: #5f1515;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+.dashboard-sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.dashboard-sidebar::-webkit-scrollbar-track {
+    background: var(--quantik-bg-sidebar);
+}
+
+.dashboard-sidebar::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: var(--quantik-border-light);
+}
+
+.dashboard-sidebar::-webkit-scrollbar-thumb:hover {
+    background: var(--quantik-danger);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+    .dashboard-page {
+        display: block;
+    }
+
+    .dashboard-sidebar {
+        position: relative;
+
+        width: 100%;
+        height: auto;
+        max-height: 420px;
+
+        border-right: 0;
+        border-bottom: 1px solid var(--quantik-border);
+    }
+
+    .dashboard-content {
+        margin-left: 0;
+        padding: 18px;
+    }
+
+    .dashboard-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}

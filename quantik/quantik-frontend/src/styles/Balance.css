@@ -1,0 +1,202 @@
+﻿.balance-page {
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 26px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    background: #0d1117;
+    color: #e6edf3;
+}
+
+.balance-container {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+}
+
+.balance-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 18px 20px;
+    margin-bottom: 22px;
+
+    border: 1px solid #30363d;
+    border-radius: 8px;
+
+    background: #161b22;
+}
+
+.balance-header h1 {
+    margin: 0 0 6px;
+
+    color: #ffffff;
+
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.balance-header p {
+    margin: 0;
+
+    color: #9198a1;
+    line-height: 1.5;
+}
+
+.balance-total-transacciones {
+    min-width: 145px;
+    padding: 12px 14px;
+
+    border: 1px solid #30363d;
+    border-radius: 8px;
+
+    background: #21262d;
+
+    text-align: center;
+}
+
+.balance-total-transacciones span {
+    display: block;
+
+    color: #9198a1;
+    font-size: 12px;
+}
+
+.balance-total-transacciones strong {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.resumen-balance {
+    display: grid;
+    grid-template-columns:
+    repeat(auto-fit, minmax(240px, 1fr));
+
+    gap: 16px;
+}
+
+.balance-card {
+    min-height: 180px;
+    padding: 20px;
+
+    border: 1px solid #30363d;
+    border-radius: 8px;
+
+    background: #21262d;
+    color: #e6edf3;
+
+    transition:
+            background-color 0.15s ease,
+            border-color 0.15s ease;
+}
+
+.balance-card:hover {
+    background: #292f36;
+}
+
+.balance-card span {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #9198a1;
+
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.balance-card strong {
+    display: block;
+
+    margin-bottom: 14px;
+
+    color: #ffffff;
+    font-size: 30px;
+}
+
+.balance-card p {
+    margin: 0;
+
+    color: #9198a1;
+    line-height: 1.5;
+}
+
+.balance-card.ingreso {
+    border-color: rgba(63, 185, 80, 0.4);
+}
+
+.balance-card.ingreso strong {
+    color: #3fb950;
+}
+
+.balance-card.gasto {
+    border-color: rgba(248, 81, 73, 0.4);
+}
+
+.balance-card.gasto strong {
+    color: #f85149;
+}
+
+.balance-card.resultado.positivo {
+    border-color: rgba(63, 185, 80, 0.4);
+}
+
+.balance-card.resultado.positivo strong {
+    color: #3fb950;
+}
+
+.balance-card.resultado.negativo {
+    border-color: rgba(248, 81, 73, 0.4);
+}
+
+.balance-card.resultado.negativo strong {
+    color: #f85149;
+}
+
+.balance-loading,
+.balance-message {
+    padding: 24px;
+
+    border: 1px solid #30363d;
+    border-radius: 8px;
+
+    background: #21262d;
+    color: #9198a1;
+
+    text-align: center;
+}
+
+.balance-error {
+    border-color: rgba(248, 81, 73, 0.4);
+    color: #f85149;
+}
+
+@media (max-width: 900px) {
+    .balance-page {
+        padding: 18px;
+    }
+
+    .balance-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .balance-total-transacciones {
+        width: 100%;
+    }
+
+    .resumen-balance {
+        grid-template-columns: 1fr;
+    }
+}

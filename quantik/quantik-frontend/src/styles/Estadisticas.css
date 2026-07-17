@@ -1,0 +1,232 @@
+﻿.estadisticas-page {
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 26px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    background: #0d1117;
+    color: #e6edf3;
+}
+
+.estadisticas-container {
+    width: 100%;
+    max-width: 1450px;
+
+    margin: 0 auto;
+}
+
+.estadisticas-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 18px 20px;
+    margin-bottom: 22px;
+
+    border: 1px solid #30363d;
+    border-radius: 8px;
+
+    background: #161b22;
+}
+
+.estadisticas-header h1 {
+    margin: 0 0 6px;
+
+    color: #ffffff;
+
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.estadisticas-header p {
+    margin: 0;
+
+    color: #9198a1;
+    line-height: 1.5;
+}
+
+.estadisticas-total {
+    min-width: 175px;
+    padding: 12px 14px;
+
+    border: 1px solid #30363d;
+    border-radius: 8px;
+
+    background: #21262d;
+
+    text-align: center;
+}
+
+.estadisticas-total span {
+    display: block;
+
+    color: #9198a1;
+    font-size: 12px;
+}
+
+.estadisticas-total strong {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.estadisticas-cards {
+    display: grid;
+    grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.estadisticas-card {
+    padding: 20px;
+
+    border: 1px solid #30363d;
+    border-radius: 8px;
+
+    background: #21262d;
+}
+
+.estadisticas-card span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #9198a1;
+
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.estadisticas-card strong {
+    display: block;
+
+    color: #ffffff;
+    font-size: 28px;
+}
+
+.estadisticas-card.ingreso {
+    border-color: rgba(63, 185, 80, 0.4);
+}
+
+.estadisticas-card.ingreso strong {
+    color: #3fb950;
+}
+
+.estadisticas-card.gasto {
+    border-color: rgba(248, 81, 73, 0.4);
+}
+
+.estadisticas-card.gasto strong {
+    color: #f85149;
+}
+
+.estadisticas-card.balance.positivo {
+    border-color: rgba(63, 185, 80, 0.4);
+}
+
+.estadisticas-card.balance.positivo strong {
+    color: #3fb950;
+}
+
+.estadisticas-card.balance.negativo {
+    border-color: rgba(248, 81, 73, 0.4);
+}
+
+.estadisticas-card.balance.negativo strong {
+    color: #f85149;
+}
+
+.estadisticas-chart-container {
+    width: 100%;
+    min-width: 0;
+
+    padding: 18px;
+
+    border: 1px solid #30363d;
+    border-radius: 8px;
+
+    background: #21262d;
+}
+
+.estadisticas-chart-header {
+    margin-bottom: 14px;
+}
+
+.estadisticas-chart-header h2 {
+    margin: 0 0 6px;
+
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.estadisticas-chart-header p {
+    margin: 0;
+
+    color: #9198a1;
+    font-size: 14px;
+}
+
+.estadisticas-chart-content {
+    width: 100%;
+    min-height: 340px;
+}
+
+.estadisticas-loading,
+.estadisticas-message,
+.estadisticas-empty {
+    padding: 28px;
+
+    border: 1px solid #30363d;
+    border-radius: 8px;
+
+    background: #21262d;
+    color: #9198a1;
+
+    text-align: center;
+}
+
+.estadisticas-error {
+    border-color: rgba(248, 81, 73, 0.4);
+    color: #f85149;
+}
+
+.recharts-legend-item-text {
+    color: #c9d1d9 !important;
+}
+
+.recharts-text {
+    fill: #9198a1;
+}
+
+@media (max-width: 900px) {
+    .estadisticas-page {
+        padding: 18px;
+    }
+
+    .estadisticas-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .estadisticas-total {
+        width: 100%;
+    }
+
+    .estadisticas-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .estadisticas-chart-container {
+        padding: 14px;
+    }
+}
